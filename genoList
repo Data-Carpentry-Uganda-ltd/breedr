@@ -1,0 +1,18 @@
+#genoList generates a genotype (progeny) list from a list of germinated
+#seed families
+
+genoList <- function(fam,lower,expected,upper = NULL){
+  genoList <- NULL
+  seed_mult <- vector("list",length = length(fam))
+  for(i in seq_along(fam)){
+    if(!missing(upper) && expected[[i]] > upper){
+      seed_mult[[i]] <- paste(fam[i],lower[i]:upper,sep = "-")
+    } else{
+      seed_mult[[i]] <- paste(fam[i],lower[i]:expected[i],sep = "-")
+    }
+  }
+  for(j in seq_along(seed_mult)){
+    genoList <- append(genoList,seed_mult[[i]])
+  }
+  genoList
+}
