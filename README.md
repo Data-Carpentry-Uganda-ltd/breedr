@@ -1,2 +1,2 @@
 # breedr
-Breeding crosses manager implementing consistent data management protocols 
+Breeding crosses data processing 
